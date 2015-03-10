@@ -15,4 +15,9 @@ public class ItemsController {
         model.put("message", "Hello Electron!");
         return "welcome";
     }
+
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String publicHome(Map<String, Object> model) {
+        return "home";
+    }
 }
