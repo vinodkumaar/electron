@@ -16,6 +16,7 @@ repositories {
 
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-web:1.2.2.RELEASE"
+    compile 'org.springframework.boot:spring-boot-starter-freemarker:1.2.0.RELEASE'
 
     testCompile "junit:junit"
 }
