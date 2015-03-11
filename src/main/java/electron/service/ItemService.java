@@ -18,7 +18,15 @@ public class ItemService {
         return Lists.newArrayList(itemRepository.findAll());
     }
 
-    public void save(Item item) {
-        itemRepository.save(item);
+    public Item save(Item item) {
+        return itemRepository.save(item);
+    }
+
+    public void delete(Item savedItem) {
+        itemRepository.delete(savedItem);
+    }
+
+    public Item find(int id) {
+        return itemRepository.findOne(id);
     }
 }
