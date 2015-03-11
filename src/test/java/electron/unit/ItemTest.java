@@ -3,7 +3,6 @@ package electron.unit;
 import electron.Application;
 import electron.domain.Item;
 import electron.domain.ItemType;
-import electron.repository.ItemRepository;
 import electron.service.ItemService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +25,7 @@ public class ItemTest {
         Item savedItem = itemService.save(testItem);
         assertEquals(testItem.getName(), savedItem.getName());
         assertEquals(testItem.getDescription(), savedItem.getDescription());
-        assertEquals(testItem.getItemType(), savedItem.getItemType());
+        assertEquals(testItem.getType(), savedItem.getType());
         itemService.delete(savedItem);
     }
 
@@ -37,7 +36,7 @@ public class ItemTest {
         Item itemFound = itemService.find(id);
         assertEquals(testItem.getName(), itemFound.getName());
         assertEquals(testItem.getDescription(), itemFound.getDescription());
-        assertEquals(testItem.getItemType(), itemFound.getItemType());
+        assertEquals(testItem.getType(), itemFound.getType());
         itemService.delete(itemFound);
     }
 
@@ -47,7 +46,7 @@ public class ItemTest {
         testItem.setPrice(10);
         testItem.setDescription("Sample description");
         testItem.setAvailableQuantity(10);
-        testItem.setItemType(ItemType.BOARD);
+        testItem.setType(ItemType.BOARD);
         return testItem;
     }
 

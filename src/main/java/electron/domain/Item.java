@@ -25,7 +25,7 @@ public class Item {
 
     @Column(name = "TYPE")
     @Enumerated(EnumType.STRING)
-    private ItemType itemType;
+    private ItemType type;
 
 
     public String getDescription() {
@@ -52,12 +52,12 @@ public class Item {
         this.availableQuantity = availableQuantity;
     }
 
-    public ItemType getItemType() {
-        return itemType;
+    public ItemType getType() {
+        return type;
     }
 
-    public void setItemType(ItemType itemType) {
-        this.itemType = itemType;
+    public void setType(ItemType type) {
+        this.type = type;
     }
 
     public String getName() {

@@ -21,7 +21,7 @@
                   <p>Brief description of the product. It can be a couple of lines. Or little more.</p>
 
                   <div>
-                      <h4>Price : <span class="label label-danger">Rs. 200</span></h4>
+                      <h4>Price : <span class="label label-danger">Rs. ${item.price}</span></h4>
                       <button class="btn btn-primary">Add to Cart</button>
                   </div>
               </div>
