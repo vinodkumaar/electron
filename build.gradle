@@ -18,7 +18,6 @@ flyway {
     user = 'admin'
 }
 
-
 repositories {
     mavenCentral()
 }
