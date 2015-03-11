@@ -13,7 +13,7 @@ public class DeliveryController {
     @RequestMapping(value = "/delivery_details", method = RequestMethod.GET)
     public String listItems(Map<String, Object> model) {
 //        model.put("message", "Hello Electron!");
-        return "delivery-details";
+        return "delivery_details";
     }
 
 }

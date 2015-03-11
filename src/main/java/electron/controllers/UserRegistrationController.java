@@ -23,8 +23,8 @@ public class UserRegistrationController {
 
 
         System.out.println(request.getParameter("dname"));
-        model.put("user", request.getParameter("dname"));
+        model.put("message", request.getParameter("dname"));
 
-        return "homez";
+        return "welcome";
     }
 }
