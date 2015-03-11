@@ -1,0 +1,1 @@
+create table ITEM ( ID int not null, NAME varchar(40) not null );
