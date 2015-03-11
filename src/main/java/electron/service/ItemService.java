@@ -1,11 +1,11 @@
 package electron.service;
 
+import com.google.common.collect.Lists;
 import electron.domain.Item;
 import electron.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -15,13 +15,7 @@ public class ItemService {
     private ItemRepository itemRepository;
 
     public List<Item> findItems() {
-        Iterable<Item> items = itemRepository.findAll();
-        List<Item> itemsList = new ArrayList<Item>();
-        for (Item i : items) {
-            itemsList.add(i);
-        }
-        return itemsList;
-
+        return Lists.newArrayList(itemRepository.findAll());
     }
 
     public void save(Item item) {

@@ -16,6 +16,7 @@ apply plugin: 'flyway'
 flyway {
     url = 'jdbc:h2:file:~/db/electron'
     user = 'admin'
+    baselineOnMigrate = true
 }
 
 repositories {
@@ -27,6 +28,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-freemarker:1.2.0.RELEASE'
     compile 'org.springframework.boot:spring-boot-starter-data-jpa'
     compile 'com.h2database:h2:1.3.170'
+    compile 'com.google.guava:guava:12.0'
 
     testCompile "junit:junit"
     testCompile 'org.springframework.boot:spring-boot-starter-test:1.2.2.RELEASE'
