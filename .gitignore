@@ -4,6 +4,6 @@
 *.iws
 .gradle/
 build/
-db/
 .testpackage/
 target/
+*.db
