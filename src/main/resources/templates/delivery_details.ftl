@@ -45,5 +45,3 @@
 
 </@p.publicTemplate>
 
-<script src="delivery_details_validator.js">
-</script>
