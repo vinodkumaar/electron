@@ -43,7 +43,7 @@ public class ItemTest {
     private Item buildTestItem() {
         Item testItem = new Item();
         testItem.setName("Test Item");
-        testItem.setPrice(10);
+        testItem.setPrice(10.0);
         testItem.setDescription("Sample description");
         testItem.setAvailableQuantity(10);
         testItem.setType(ItemType.BOARD);

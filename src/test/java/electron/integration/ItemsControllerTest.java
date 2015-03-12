@@ -43,7 +43,7 @@ public class ItemsControllerTest {
 
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         assertTrue(responseEntity.getBody(), responseEntity.getBody()
-                .contains("Transistors"));
+                .contains("Arduino"));
 
     }
 

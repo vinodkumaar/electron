@@ -18,7 +18,7 @@ public class Item {
     private String description;
 
     @Column(name = "PRICE")
-    private double price;
+    private Double price;
 
     @Column(name = "AVAILABLE_QUANTITY")
     private int availableQuantity;
@@ -26,6 +26,9 @@ public class Item {
     @Column(name = "TYPE")
     @Enumerated(EnumType.STRING)
     private ItemType type;
+
+    @Column(name = "IMAGE_URL")
+    private String imageUrl;
 
 
     public String getDescription() {
@@ -36,11 +39,11 @@ public class Item {
         this.description = description;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -75,4 +78,13 @@ public class Item {
     public void setId(final Integer id) {
         this.id = id;
     }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
 }
