@@ -12,7 +12,7 @@
         <#list items as item>
           <div class="col-xs-12 col-sm-6 col-md-4">
               <div class="panel">
-                  <a class="thumbnail" href="/component/${item.id}">
+                  <a class="thumbnail" href="/item/${item.id}">
                       <img class="img-responsive" src="http://demandware.edgesuite.net/sits_pod26/dw/image/v2/AASR_PRD/on/demandware.static/Sites-radioshack-Site/Sites-master-catalog/default/v1425981627437/images/02750232_00.jpg?sw=195&sh=195&sm=fit"
                            alt="Jumbotron example">
                   </a>

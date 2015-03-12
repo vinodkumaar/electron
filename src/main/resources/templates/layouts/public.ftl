@@ -21,12 +21,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                      <a class="navbar-brand" href="#">Electron</a>
+                      <a class="navbar-brand" href="/">Electron <span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
-                      <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">Cart <span id="cart_quantity" class="badge">4</span></a></li>
+                      <ul class="nav navbar-nav navbar-right">
+                          <li ><a href="/cart">Cart <span id="cart_quantity" class="badge">0</span></a></li>
+                          <li ><a href="/checkout">Checkout <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
                       </ul>
                     </div><!--/.nav-collapse -->
                   </div>
