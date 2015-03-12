@@ -1,5 +1,7 @@
 package electron.domain;
 
+import org.springframework.context.annotation.Primary;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,7 +9,7 @@ import javax.persistence.*;
 public class Item {
 
     @Id
-    @Column(name = "ID", length = 16)
+    @Column(name = "ID", length = 16, unique = true)
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
@@ -18,7 +20,7 @@ public class Item {
     private String description;
 
     @Column(name = "PRICE")
-    private double price;
+    private Double price;
 
     @Column(name = "AVAILABLE_QUANTITY")
     private int availableQuantity;
@@ -26,6 +28,9 @@ public class Item {
     @Column(name = "TYPE")
     @Enumerated(EnumType.STRING)
     private ItemType type;
+
+    @Column(name = "IMAGE_URL")
+    private String imageUrl;
 
 
     public String getDescription() {
@@ -36,11 +41,11 @@ public class Item {
         this.description = description;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -75,4 +80,13 @@ public class Item {
     public void setId(final Integer id) {
         this.id = id;
     }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
 }
