@@ -11,16 +11,16 @@
 
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter name" required />
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter name" required />
         </div>
         <div class="form-group">
         <label for="address">Address</label>
-        <textarea class="form-control" rows="3" id="address" placeholder="Enter Address" required></textarea>
+        <textarea class="form-control" rows="3" name="address" id="address" placeholder="Enter Address" required></textarea>
         </div>
 
         <div class="form-group">
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email" required />
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required />
         </div>
     </div>
 </div>
@@ -30,12 +30,12 @@
         <h3 class="panel-title">Payment Options</h3>
 
     </div>
-    <div class="panel-body">
+    <div class="panel-body" required>
         <label class="radio-inline">
-            <input type="radio" name="radioGroup" id="cod" value="cod" required > Cash on Delivery
+            <input type="radio" name="paymentmode" id="cod" value="cod" checked required > Cash on Delivery
         </label>
         <label class="radio-inline">
-            <input type="radio" name="radioGroup" id="creditcard" value="creditcard" > Credit Card
+            <input type="radio" name="paymentmode" id="creditcard" value="creditcard" > Credit Card
         </label>
       </div>
     </div>
