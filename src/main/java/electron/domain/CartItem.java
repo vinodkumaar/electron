@@ -6,13 +6,20 @@ public class CartItem {
 
   private int quantity;
 
-  public CartItem(int itemId, int quantity) {
+  public CartItem(int itemId) {
     this.itemId = itemId;
-    this.quantity = quantity;
+      this.quantity=1;
   }
 
   public int getItemId() {
     return itemId;
   }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void add(){
+        quantity++;
+    }
 }

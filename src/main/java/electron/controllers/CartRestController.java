@@ -1,5 +1,6 @@
 package electron.controllers;
 
+import electron.domain.Cart;
 import electron.domain.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,22 +12,19 @@ import javax.servlet.http.HttpSession;
 @RestController
 public class CartRestController {
 
-
-    private static int count;
     @RequestMapping(value = "/rest/cart/items", method = RequestMethod.POST)
     public ResponseEntity postCartItem(@RequestBody Item item, HttpSession session) {
-        Integer id = (Integer) session.getAttribute("cartId");
-        if( id == null)
+
+        Cart cart= (Cart)session.getAttribute("cart");
+
+        if(cart==null)
         {
-            id = new Integer(count++);
-            System.out.println("id"+id);
-            session.setAttribute("cartId", id);
-        }
-        else
-        {
-            System.out.println("Found in session");
+            cart = new Cart();
+            session.setAttribute("cart",cart);
         }
 
-        return ResponseEntity.ok("{\"value\":"+id+"}");
+        cart.add(item.getId());
+
+        return ResponseEntity.ok("{\"quantity\":"+cart.getQuantity()+"}");
     }
 }

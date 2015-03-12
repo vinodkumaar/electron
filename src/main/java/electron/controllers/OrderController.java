@@ -17,11 +17,11 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @RequestMapping(value = "/delivery_details", method = RequestMethod.GET)
-    public String getDeliveryDetails(Map<String, Object> model) {
-//        model.put("message", "Hello Electron!");
-        return "delivery_details";
-    }
+//    @RequestMapping(value = "/delivery_details", method = RequestMethod.GET)
+//    public String getDeliveryDetails(Map<String, Object> model) {
+////        model.put("message", "Hello Electron!");
+//        return "delivery_details";
+//    }
 
     @RequestMapping(value = "/checkout",method=RequestMethod.POST)
     public String saveDeliveryDetails(Map<String, Object> model,HttpServletRequest request) {
