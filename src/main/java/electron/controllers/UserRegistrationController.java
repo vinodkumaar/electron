@@ -12,8 +12,9 @@ public class UserRegistrationController {
 
 
     @RequestMapping(value = "/user_registration", method = RequestMethod.GET)
-    public String listItems(Map<String, Object> model) {
+    public String listItems(Map<String, Object> model,HttpServletRequest request) {
 //        model.put("message", "Hello Electron!");
+        System.out.println(request.getSession());
         return "user_registration";
     }
 
