@@ -1,0 +1,1 @@
+create table ORDERS (ID int not null, CUST_NAME varchar(40) not null,ADDRESS varchar(100) not null,EMAIL varchar(40) not null,PAY_MODE varchar(15) not null,CART_ID int not null);
