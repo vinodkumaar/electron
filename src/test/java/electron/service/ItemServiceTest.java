@@ -1,4 +1,4 @@
-package electron.unit;
+package electron.service;
 
 import electron.Application;
 import electron.domain.Item;
@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = {Application.class})
-public class ItemTest {
+public class ItemServiceTest {
 
     @Autowired
     private ItemService itemService;

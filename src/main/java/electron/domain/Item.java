@@ -1,5 +1,7 @@
 package electron.domain;
 
+import org.springframework.context.annotation.Primary;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,7 +9,7 @@ import javax.persistence.*;
 public class Item {
 
     @Id
-    @Column(name = "ID", length = 16)
+    @Column(name = "ID", length = 16, unique = true)
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 

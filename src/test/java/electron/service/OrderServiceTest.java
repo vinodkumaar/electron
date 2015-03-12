@@ -1,4 +1,4 @@
-package electron.unit;
+package electron.service;
 
 import electron.Application;
 import electron.domain.Order;
@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = {Application.class})
-public class orderTest {
+public class OrderServiceTest {
     @Autowired
     private OrderService orderService;
 
@@ -30,7 +30,7 @@ public class orderTest {
     }
 
     @Test
-    public void shouldFindAnItemInDB() {
+    public void shouldFindAnOrderInDb() {
         Order testOrder= buildOrder();
         int id = orderService.save(testOrder).getId();
         Order orderFound = orderService.find(id);
