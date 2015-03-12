@@ -14,11 +14,11 @@
               <div class="panel">
                   <a class="thumbnail" href="/item/${item.id}">
                       <img class="img-responsive" src="http://demandware.edgesuite.net/sits_pod26/dw/image/v2/AASR_PRD/on/demandware.static/Sites-radioshack-Site/Sites-master-catalog/default/v1425981627437/images/02750232_00.jpg?sw=195&sh=195&sm=fit"
-                           alt="Jumbotron example">
+                           alt="${item.name}">
                   </a>
                   <h4>${item.name}</h4>
 
-                  <p>Brief description of the product. It can be a couple of lines. Or little more.</p>
+                  <p>${item.description}</p>
 
                   <div class="row">
                       <div class="col-xs-6">
