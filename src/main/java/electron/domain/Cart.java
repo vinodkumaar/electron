@@ -1,32 +1,18 @@
 package electron.domain;
 
-import javax.persistence.*;
 import java.util.List;
 
-@Entity
-@Table(name = "CART")
 public class Cart {
 
-  @Id
-  @Column(name = "ID", length = 16)
   private int id;
+  private List<CartItem> cartItems;
 
- @OneToMany
- private List<CartItem> cartItem;
-
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
+  public Cart(int id, List<CartItem> cartItems) {
     this.id = id;
+    this.cartItems = cartItems;
   }
 
-  public List<CartItem> getCartItem() {
-    return cartItem;
-  }
-
-  public void setCartItem(List<CartItem> cartItem) {
-    this.cartItem = cartItem;
+  public List<CartItem> getCartItems() {
+    return cartItems;
   }
 }

@@ -1,28 +1,18 @@
 package electron.domain;
 
-
-import javax.persistence.*;
-
-@Entity
-@Table(name = "CARTITEM")
 public class CartItem {
 
-  @Id
-  @Column(name = "ID", length = 16)
-  private int id;
+  private int itemId;
 
-  @ManyToOne
-  private Cart cart;
-
-  @OneToOne
-  private Item item;
-
-  @Column(name="QUANTITY")
   private int quantity;
 
-  public CartItem(int id, int quantity) {
-    this.id = id;
+  public CartItem(int itemId, int quantity) {
+    this.itemId = itemId;
     this.quantity = quantity;
-
   }
+
+  public int getItemId() {
+    return itemId;
+  }
+
 }
