@@ -2,11 +2,6 @@
 <@p.publicTemplate title="Electron product list">
 
 <div class="container">
-    <div class="jumbotron">
-        <h1>List of items</h1>
-
-        <p>This is a template showcasing.</p>
-    </div>
     <div class="row">
 
         <#list items as item>
