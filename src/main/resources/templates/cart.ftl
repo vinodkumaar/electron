@@ -16,14 +16,18 @@
                             <h4>${.vars[itemId].name}</h4>
 
                             <div>
-                                <h4><span class="label label-info">Rs. <span id="price">${.vars[itemId].price}</span></span></h4>
+                                <h4><span class="label label-info">Rs. <span
+                                        id="price">${.vars[itemId].price}</span></span></h4>
                             </div>
 
-                            <a href="/item/delete/${.vars[itemId].id}"><button class="btn btn-danger btn-xs pull-right">Remove from Cart
-                            </button> </a>
+                            <a href="/item/delete/${.vars[itemId].id}">
+                                <button class="btn btn-danger btn-xs pull-right">Remove from Cart
+                                </button>
+                            </a>
                         </div>
                         <div class="col-xs-3">
-                            <select name="quantity" id="quantity_${cartItem.itemId}" onchange="updateCartItemQuantity(${cartItem.itemId})">
+                            <select name="quantity" id="quantity_${cartItem.itemId}"
+                                    onchange="updateCartItemQuantity(${cartItem.itemId})">
                                 <#list 1..10 as count>
                                     <#if count == cartItem.quantity>
                                         <option value="${count}" label="${count}" selected/>
@@ -42,6 +46,20 @@
         </#list>
     </div>
 </div>
+    <#if cart.cartItems?has_content>
+    <div class="row">
+        <div class="col-md-2 col-md-offset-5">
+            <a href="#">
+                <button class="btn btn-danger btn-lg btn-block">Checkout
+                </button>
+            </a>
+        </div>
+    </div>
+    <#else>
+    <div class="row">
+        Your cart is empty, keep shopping.
+    </div>
+    </#if>
 <script src="cart_.js"></script>
 
 </@p.publicTemplate>
