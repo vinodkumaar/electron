@@ -7,11 +7,18 @@ function updateCartItemQuantity(itemId){
         data: '{"quantity":'+$('#quantity_'+itemId).val()+'}',
         }).then(function(result){
                     refreshCart();
-                    calculatePrices();
+                    calculatePrices(itemId);
                     });
 
 }
 
-function calculatePrices()
+function calculatePrices(itemId)
 {
+   $.ajax({
+          url: "/rest/cart/cartitem/"+itemId+"/totalPrice",
+          type: 'GET',
+          contentType: 'application/json',
+          }).then(function(result){
+                      $('#total_'+ itemId).text(JSON.parse(result).totalPrice);
+                      });
 }

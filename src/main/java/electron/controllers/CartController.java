@@ -28,10 +28,6 @@ public class CartController {
             cart = new Cart();
             session.setAttribute("cart", cart);
         }
-
-        for (CartItem cartItem : cart.getCartItems()) {
-            model.put("" + cartItem.getItemId(), itemService.find(cartItem.getItemId()));
-        }
         model.put("cart", cart);
 
         return "cart";

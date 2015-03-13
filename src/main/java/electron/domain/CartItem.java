@@ -1,30 +1,36 @@
 package electron.domain;
 
+
 public class CartItem {
+    private Item item;
 
-  private int itemId;
+    private int quantity;
 
-  private int quantity;
+    public CartItem() {
+    }
 
-    public CartItem(){}
-  public CartItem(int itemId) {
-    this.itemId = itemId;
-      this.quantity=1;
-  }
-
-  public int getItemId() {
-    return itemId;
-  }
+    public CartItem(Item item) {
+        this.quantity = 1;
+        this.item=item;
+    }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public void add(){
+    public void add() {
         quantity++;
     }
 
     public void setQuantity(int quantity) {
-        this.quantity=quantity;
+        this.quantity = quantity;
+    }
+
+    public double getTotalPrice() {
+        return item.getPrice()*quantity;
+    }
+
+    public Item getItem() {
+        return item;
     }
 }

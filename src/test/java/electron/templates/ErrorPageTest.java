@@ -42,7 +42,7 @@ public class ErrorPageTest {
 
         assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
         assertTrue("Wrong body:\n" + responseEntity.getBody(), responseEntity.getBody()
-                .contains("Not Found"));
+                .contains("Something bad happened"));
     }
 
 
