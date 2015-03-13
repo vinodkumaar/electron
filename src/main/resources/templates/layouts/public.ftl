@@ -8,9 +8,11 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css"/>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
-
+            <link rel="stylesheet" href="css/home.css"/>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+            <script src="common.js"></script>
+
         </head>
         <body role="document">
         <!-- header section -->
@@ -28,7 +30,7 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                       <ul class="nav navbar-nav navbar-right">
-                          <li ><a href="/cart">Cart <span id="cart_quantity" class="badge">0</span></a></li>
+                          <li ><a href="/cart">Cart <span class="glyphicons glyphicons-shopping-cart"></span></span><span id="cart_quantity" class="badge"></span></a></li>
                           <li ><a href="/checkout">Checkout <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
                       </ul>
                     </div><!--/.nav-collapse -->
