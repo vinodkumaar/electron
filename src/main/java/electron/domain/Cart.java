@@ -16,39 +16,37 @@ public class Cart {
     return cartItems;
   }
 
-    public void add(int itemId) {
+  public void add(int itemId) {
 
-        CartItem cartItem = getCartItem(itemId);
-        if(cartItem==null)
-        {
-            cartItem = new CartItem(itemId);
-            cartItems.add(cartItem);
-        }
-        else
-        {
-            cartItem.add();
-        }
+    CartItem cartItem = getCartItem(itemId);
+    if (cartItem == null) {
+      cartItem = new CartItem(itemId);
+      cartItems.add(cartItem);
+    } else {
+      cartItem.add();
     }
+  }
 
-    public int getQuantity() {
+  public int getQuantity() {
 
-        int quantity = 0;
-        for(CartItem cartItem : cartItems)
-        {
-            quantity+= cartItem.getQuantity();
-        }
-        return quantity;
+    int quantity = 0;
+    for (CartItem cartItem : cartItems) {
+      quantity += cartItem.getQuantity();
     }
+    return quantity;
+  }
 
-    public CartItem getCartItem(int itemId) {
+  public CartItem getCartItem(int itemId) {
 
-        for(CartItem cartItem:cartItems)
-        {
-            if(cartItem.getItemId() == itemId)
-            {
-                return cartItem;
-            }
-        }
-        return null;
+    for (CartItem cartItem : cartItems) {
+      if (cartItem.getItemId() == itemId) {
+        return cartItem;
+      }
     }
+    return null;
+  }
+
+  public void deleteCartItem(int itemId) {
+    cartItems.remove(getCartItem(itemId));
+  }
 }
