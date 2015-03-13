@@ -4,6 +4,7 @@ package electron.domain;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class CartTest {
 
@@ -63,6 +64,21 @@ public class CartTest {
         assertEquals(3, cart.getCartItem(1).getQuantity());
         assertEquals(1, cart.getCartItem(2).getQuantity());
     }
+
+
+    @Test
+    public void shouldBeAbleToDeleteItemFromCart(){
+      Cart  cart = new Cart();
+      cart.add(1);
+      cart.add(1);
+      cart.add(1);
+      cart.add(2);
+      cart.deleteCartItem(1);
+      assertNull(cart.getCartItem(1));
+      assertEquals(1,cart.getCartItem(2).getQuantity());
+    }
+
+
 
 
 }
