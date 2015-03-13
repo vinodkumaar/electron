@@ -49,7 +49,7 @@
     <#if cart.cartItems?has_content>
     <div class="row">
         <div class="col-md-2 col-md-offset-5">
-            <a href="#">
+            <a href="/checkout">
                 <button class="btn btn-danger btn-lg btn-block">Checkout
                 </button>
             </a>

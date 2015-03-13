@@ -31,7 +31,6 @@
                     <div id="navbar" class="navbar-collapse collapse">
                       <ul class="nav navbar-nav navbar-right">
                           <li ><a href="/cart">Cart <span class="glyphicons glyphicons-shopping-cart"></span></span><span id="cart_quantity" class="badge"></span></a></li>
-                          <li ><a href="/checkout">Checkout <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
                       </ul>
                     </div><!--/.nav-collapse -->
                   </div>
