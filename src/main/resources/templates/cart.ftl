@@ -23,9 +23,14 @@
                             </button> </a>
                         </div>
                         <div class="col-xs-3">
-                            <select name="quantity" id="quantity" onchange="calculatePrices()">
+                            <select name="quantity" id="quantity_${cartItem.itemId}" onchange="updateCartItemQuantity(${cartItem.itemId})">
                                 <#list 1..10 as count>
-                                    <option value="${count}" label="${count}"/>
+                                    <#if count == cartItem.quantity>
+                                        <option value="${count}" label="${count}" selected/>
+                                    <#else>
+                                        <option value="${count}" label="${count}"/>
+                                    </#if>
+
                                 </#list>
                             </select>
                             <h4 class="pull-right">Total : <span class="label label-primary">Rs.<span
@@ -37,6 +42,6 @@
         </#list>
     </div>
 </div>
-<script src="carte.js"></script>
+<script src="cart_.js"></script>
 
 </@p.publicTemplate>

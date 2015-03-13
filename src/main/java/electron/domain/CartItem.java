@@ -6,6 +6,7 @@ public class CartItem {
 
   private int quantity;
 
+    public CartItem(){}
   public CartItem(int itemId) {
     this.itemId = itemId;
       this.quantity=1;
@@ -21,5 +22,9 @@ public class CartItem {
 
     public void add(){
         quantity++;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity=quantity;
     }
 }

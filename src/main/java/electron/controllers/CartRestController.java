@@ -1,6 +1,7 @@
 package electron.controllers;
 
 import electron.domain.Cart;
+import electron.domain.CartItem;
 import electron.domain.Item;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,5 +35,14 @@ public class CartRestController {
         Cart cart= (Cart)session.getAttribute("cart");
 
         return ResponseEntity.ok("{\"quantity\":"+(cart==null?0:cart.getQuantity())+"}");
+    }
+
+    @RequestMapping(value = "/rest/cart/cartitem/{itemId}", method = RequestMethod.PUT)
+    public ResponseEntity updateCartItemQuantity(@RequestBody CartItem cartItem, @PathVariable Integer itemId, HttpSession session) {
+
+        Cart cart= (Cart)session.getAttribute("cart");
+        cart.getCartItem(itemId).setQuantity(cartItem.getQuantity());
+
+        return ResponseEntity.noContent().build();
     }
 }

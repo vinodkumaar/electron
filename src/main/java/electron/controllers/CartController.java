@@ -17,29 +17,33 @@ import java.util.Map;
 @Controller
 public class CartController {
 
-  @Autowired
-  ItemService itemService;
+    @Autowired
+    ItemService itemService;
 
-  @RequestMapping(value = "/cart", method = RequestMethod.GET)
-  public String publicCart(Map<String, Object> model, HttpSession session) {
+    @RequestMapping(value = "/cart", method = RequestMethod.GET)
+    public String publicCart(Map<String, Object> model, HttpSession session) {
 
-    Cart cart = (Cart) session.getAttribute("cart");
+        Cart cart = (Cart) session.getAttribute("cart");
+        if (cart == null) {
+            cart = new Cart();
+            session.setAttribute("cart", cart);
+        }
 
-    for (CartItem cartItem : cart.getCartItems()) {
-      model.put("" + cartItem.getItemId(), itemService.find(cartItem.getItemId()));
+        for (CartItem cartItem : cart.getCartItems()) {
+            model.put("" + cartItem.getItemId(), itemService.find(cartItem.getItemId()));
+        }
+        model.put("cart", cart);
+
+        return "cart";
     }
-    model.put("cart", cart);
 
-    return "cart";
-  }
+    @RequestMapping(value = "/item/delete/{id}", method = RequestMethod.GET)
+    public String deleteItemFromCart(Map<String, Object> model, HttpSession session, @PathVariable Integer id) {
 
-  @RequestMapping(value = "/item/delete/{id}", method = RequestMethod.GET)
-  public String deleteItemFromCart(Map<String, Object> model, HttpSession session, @PathVariable Integer id) {
-
-    Cart cart = (Cart) session.getAttribute("cart");
-    cart.deleteCartItem(id);
-    return "redirect:/cart";
-  }
+        Cart cart = (Cart) session.getAttribute("cart");
+        cart.deleteCartItem(id);
+        return "redirect:/cart";
+    }
 
 
 }
